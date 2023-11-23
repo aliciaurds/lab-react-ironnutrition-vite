@@ -6,6 +6,15 @@ function AddFoodForm(props) {
     const [caloriesValue, setCaloriesValue] = useState(0);
     const [servingsValue, setServingsValue] = useState(0);
 
+    //*Forma de hacerlo en sola una funcion 
+    // const [formValue, setFormValue] = useState({
+    //     name: "",
+    //     image: "",
+    //     calories: 0,
+    //     servings: 0,
+    // });
+  //* Video de la mañana del 23/11
+
     const handleNameChange = (event) => {
         // console.log("typing name", event.target.value);
         setNameValue(event.target.value);
