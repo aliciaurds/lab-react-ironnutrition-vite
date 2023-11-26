@@ -7,7 +7,7 @@ function App() {
   
   return (
     <div className="App">
-      <h1>IronNutrition</h1>
+      
       {/* //* ITERATION 2: 
        <FoodBox
         food={{

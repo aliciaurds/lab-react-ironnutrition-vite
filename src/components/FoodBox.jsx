@@ -1,3 +1,6 @@
+//import antd
+import { Card, Col, Button } from "antd";
+
 function FoodBox(props) {
   const { id, name, calories, image, servings } = props.food; //lo que pone en el App en el prop es food
   const { foods, setFoods } = props; 
@@ -17,17 +20,14 @@ function FoodBox(props) {
     setFoods(newFoods); //actualizamos el nuevo array de foods
   };
 
-  const cardStyle = {
-    width: "200px",
-  };
+ 
   const totalCalories = calories * servings;
   return (
     //* ITERATION 3 */}
     //  Recorro el array => creando componente para cada elemento, paso eachFood e index para la key (que sea unico) como en App la propiedad se llama foodsProp es lo que mapeo
-    <div>
-      <hr />
-      <h2>{name}</h2>
-      <img style={cardStyle} src={image} alt="foodPic" />
+    <Col>      
+      <Card title= {name} style={{ width: 230, height: 300, margin: 10 }}>        
+     <img src={image} alt="foodPic" height={60} />
       <p>
         <b>Calories: </b>
         {calories}
@@ -41,8 +41,9 @@ function FoodBox(props) {
         <b>Total Calories: </b>
         {totalCalories} kcal
       </p>
-      <button onClick={() => handleDelete(id)}>Delete</button>
-    </div>
+      <Button type="primary" onClick={() => handleDelete(id)}>Delete</Button>
+      </Card>
+    </Col>
   );
 }
 

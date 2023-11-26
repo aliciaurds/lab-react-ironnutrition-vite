@@ -1,4 +1,7 @@
+//import hook
 import { useState } from "react"
+//import antd
+import { Divider, Input, Button } from "antd";
 
 function AddFoodForm(props) {
     const [nameValue, setNameValue] = useState("");
@@ -60,23 +63,23 @@ function AddFoodForm(props) {
 
     
 
-  
+  //onsubmit puede ir o en el form o en el boton
   return (
     <form onSubmit={handleSubmit} >
-        <h3>Add Food</h3>
+        <Divider style={{color: "white", fontSize: "40px"}}>Add Food</Divider>
         <label htmlFor="name">Name: </label>
         {/* //actualizar el estado cada vez que cambie el campo */}
-        <input type="text" name="name" onChange={handleNameChange} value={nameValue}/>
-        <br />
+        <Input type="text" name="name" onChange={handleNameChange} value={nameValue}/>
+        
         <label htmlFor="image">Image: </label>
-        <input type="text" name="image" onChange={handleImageChange} value={imageValue} />
-        <br />
+        <Input type="text" name="image" onChange={handleImageChange} value={imageValue} />
+        
         <label htmlFor="calories">Calories:</label>
-        <input type="number" name="calories" onChange={handleCaloriesChange} value={caloriesValue}/>
-        <br />
+        <Input type="number" name="calories" onChange={handleCaloriesChange} value={caloriesValue}/>
+        
         <label htmlFor="servings">Servings:</label>
-        <input type="number" name="servings" onChange={handleServingsChange} value={servingsValue}/>
-        <br />
+        <Input type="number" name="servings" onChange={handleServingsChange} value={servingsValue}/>
+        
         <button>Create</button>
         
     </form>
